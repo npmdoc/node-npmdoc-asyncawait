@@ -1,0 +1,2692 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/yortus/asyncawait"
+
+    >asyncawait (v1.0.6)</a>
+</h1>
+<h4>async/await for node.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait">module asyncawait</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async">
+            function <span class="apidocSignatureSpan">asyncawait.</span>async
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.cps">
+            function <span class="apidocSignatureSpan">asyncawait.</span>async.cps
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.iterable">
+            function <span class="apidocSignatureSpan">asyncawait.</span>async.iterable
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.result">
+            function <span class="apidocSignatureSpan">asyncawait.</span>async.result
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.thunk">
+            function <span class="apidocSignatureSpan">asyncawait.</span>async.thunk
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.asyncIterator">
+            function <span class="apidocSignatureSpan">asyncawait.</span>asyncIterator
+            <span class="apidocSignatureSpan">(runContext, semaphore, returnValue, acceptsCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.await">
+            function <span class="apidocSignatureSpan">asyncawait.</span>await
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.config">
+            function <span class="apidocSignatureSpan">asyncawait.</span>config
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fibers">
+            function <span class="apidocSignatureSpan">asyncawait.</span>fibers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.semaphore">
+            function <span class="apidocSignatureSpan">asyncawait.</span>semaphore
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncawait.</span>asyncIterator.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncawait.</span>config.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncawait.</span>fiberManager</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncawait.</span>fibers.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncawait.</span>semaphore.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.async">module asyncawait.async</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.async">
+            function <span class="apidocSignatureSpan">asyncawait.</span>async
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.cps">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>cps
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.iterable">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>iterable
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.mod">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>mod
+            <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.result">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>result
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.thunk">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>thunk
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.async.cps">module asyncawait.async.cps</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.cps.cps">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>cps
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.cps.mod">
+            function <span class="apidocSignatureSpan">asyncawait.async.cps.</span>mod
+            <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.async.iterable">module asyncawait.async.iterable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.iterable.iterable">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>iterable
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.iterable.mod">
+            function <span class="apidocSignatureSpan">asyncawait.async.iterable.</span>mod
+            <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.async.result">module asyncawait.async.result</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.result.result">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>result
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.result.mod">
+            function <span class="apidocSignatureSpan">asyncawait.async.result.</span>mod
+            <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.async.thunk">module asyncawait.async.thunk</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.thunk.thunk">
+            function <span class="apidocSignatureSpan">asyncawait.async.</span>thunk
+            <span class="apidocSignatureSpan">(bodyFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.async.thunk.mod">
+            function <span class="apidocSignatureSpan">asyncawait.async.thunk.</span>mod
+            <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.asyncIterator">module asyncawait.asyncIterator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.asyncIterator.asyncIterator">
+            function <span class="apidocSignatureSpan">asyncawait.</span>asyncIterator
+            <span class="apidocSignatureSpan">(runContext, semaphore, returnValue, acceptsCallback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.asyncIterator.prototype">module asyncawait.asyncIterator.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.asyncIterator.prototype.destroy">
+            function <span class="apidocSignatureSpan">asyncawait.asyncIterator.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.asyncIterator.prototype.forEach">
+            function <span class="apidocSignatureSpan">asyncawait.asyncIterator.prototype.</span>forEach
+            <span class="apidocSignatureSpan">(callback, doneCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.asyncIterator.prototype.next">
+            function <span class="apidocSignatureSpan">asyncawait.asyncIterator.prototype.</span>next
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.await">module asyncawait.await</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.await.await">
+            function <span class="apidocSignatureSpan">asyncawait.</span>await
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.await.in">
+            function <span class="apidocSignatureSpan">asyncawait.await.</span>in
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.await.top">
+            function <span class="apidocSignatureSpan">asyncawait.await.</span>top
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.config">module asyncawait.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.config.config">
+            function <span class="apidocSignatureSpan">asyncawait.</span>config
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">asyncawait.config.</span>NONE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">asyncawait.config.</span>PROMISE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">asyncawait.config.</span>RESULT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">asyncawait.config.</span>THUNK</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.config.prototype">module asyncawait.config.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.config.prototype.validate">
+            function <span class="apidocSignatureSpan">asyncawait.config.prototype.</span>validate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.fiberManager">module asyncawait.fiberManager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fiberManager.create">
+            function <span class="apidocSignatureSpan">asyncawait.fiberManager.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fiberManager.isExecutingInFiber">
+            function <span class="apidocSignatureSpan">asyncawait.fiberManager.</span>isExecutingInFiber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.fibers">module asyncawait.fibers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fibers.fibers">
+            function <span class="apidocSignatureSpan">asyncawait.</span>fibers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fibers.yield">
+            function <span class="apidocSignatureSpan">asyncawait.fibers.</span>yield
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">asyncawait.fibers.</span>fibersCreated</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">asyncawait.fibers.</span>poolSize</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.fibers.prototype">module asyncawait.fibers.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fibers.prototype.reset">
+            function <span class="apidocSignatureSpan">asyncawait.fibers.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fibers.prototype.run">
+            function <span class="apidocSignatureSpan">asyncawait.fibers.prototype.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.fibers.prototype.throwInto">
+            function <span class="apidocSignatureSpan">asyncawait.fibers.prototype.</span>throwInto
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.semaphore">module asyncawait.semaphore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.semaphore.semaphore">
+            function <span class="apidocSignatureSpan">asyncawait.</span>semaphore
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">asyncawait.semaphore.</span>unlimited</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.asyncawait.semaphore.prototype">module asyncawait.semaphore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.semaphore.prototype.enter">
+            function <span class="apidocSignatureSpan">asyncawait.semaphore.prototype.</span>enter
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.asyncawait.semaphore.prototype.leave">
+            function <span class="apidocSignatureSpan">asyncawait.semaphore.prototype.</span>leave
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait" id="apidoc.module.asyncawait">module asyncawait</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async" id="apidoc.element.asyncawait.async">
+        function <span class="apidocSignatureSpan">asyncawait.</span>async
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.cps" id="apidoc.element.asyncawait.async.cps">
+        function <span class="apidocSignatureSpan">asyncawait.</span>async.cps
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.iterable" id="apidoc.element.asyncawait.async.iterable">
+        function <span class="apidocSignatureSpan">asyncawait.</span>async.iterable
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.result" id="apidoc.element.asyncawait.async.result">
+        function <span class="apidocSignatureSpan">asyncawait.</span>async.result
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.thunk" id="apidoc.element.asyncawait.async.thunk">
+        function <span class="apidocSignatureSpan">asyncawait.</span>async.thunk
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.asyncIterator" id="apidoc.element.asyncawait.asyncIterator">
+        function <span class="apidocSignatureSpan">asyncawait.</span>asyncIterator
+        <span class="apidocSignatureSpan">(runContext, semaphore, returnValue, acceptsCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AsyncIterator(runContext, semaphore, returnValue, acceptsCallback) {
+    this._runContext = runContext;
+    this._semaphore = semaphore;
+    this._fiber = FiberMgr.create();
+    this._returnValue = returnValue;
+    this._acceptsCallback = acceptsCallback;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.await" id="apidoc.element.asyncawait.await">
+        function <span class="apidocSignatureSpan">asyncawait.</span>await
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function await() {
+    // Ensure this function is executing inside a fiber.
+    if (!Fiber.current) {
+        throw new Error(&#x27;await functions, yield functions, and value-returning suspendable &#x27; +
+            &#x27;functions may only be called from inside a suspendable function. &#x27;);
+    }
+    // Parse argument(s). If not a single argument, treat it like an array was passed in.
+    if (arguments.length === 1) {
+        var expr = arguments[0];
+    }
+    else {
+        expr = new Array(arguments.length);
+        for (var i = 0; i &#x3c; arguments.length; ++i)
+            expr[i] = arguments[i];
+        traverse = traverseInPlace;
+    }
+    // Handle each supported &#x27;awaitable&#x27; appropriately...
+    var fiber = Fiber.current;
+    if (expr &#x26;&#x26; _.isFunction(expr.then)) {
+        // A promise: resume the coroutine with the resolved value, or throw the rejection value into it.
+        // NB: ensure the handlers return null to avoid bluebird 3.x warning &#x27;a promise was created in a
+        //     handler but none were returned from it&#x27;. This occurs if the next resumption of the suspendable
+        //     function (i.e. in the client&#x27;s code) creates a bluebird 3.x promise and then awaits it.
+        expr.then(function (val) { return (fiber.run(val), fiber = null); }, function (err) { return (fiber.throwInto(err), fiber
+ = null); });
+    }
+    else if (_.isFunction(expr)) {
+        // A thunk: resume the coroutine with the callback value, or throw the errback value into it.
+        expr(function (err, val) { if (err)
+            fiber.throwInto(err);
+        else
+            fiber.run(val); fiber = null; });
+    }
+    else if (_.isArray(expr) || _.isPlainObject(expr)) {
+        // An array or plain object: resume the coroutine with a deep clone of the array/object,
+        // where all contained promises and thunks have been replaced by their resolved values.
+        // NB: ensure handlers return null (see similar comment above).
+        var trackedPromises = [];
+        expr = traverse(expr, trackAndReplaceWithResolvedValue(trackedPromises));
+        if (!topN) {
+            Promise.all(trackedPromises).then(function (val) { return (fiber.run(expr), fiber = null); }, function (err) { return
+ (fiber.throwInto(err), fiber = null); });
+        }
+        else {
+            Promise.some(trackedPromises, topN).then(function (val) { return (fiber.run(val), fiber = null); }, function (err) {
+return (fiber.throwInto(err), fiber = null); });
+        }
+    }
+    else {
+        // Anything else: resume the coroutine immediately with the value.
+        setImmediate(function () { fiber.run(expr); fiber = null; });
+    }
+    // Suspend the current fiber until the one of the above handlers resumes it again.
+    return Fiber.yield();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.config" id="apidoc.element.asyncawait.config">
+        function <span class="apidocSignatureSpan">asyncawait.</span>config
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Config(options) {
+    /** Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result&#x27;. */
+    this.returnValue = Config.PROMISE;
+    /** Indicates whether a callback function, if supplied, will be used to notify waiters of results. */
+    this.acceptsCallback = false;
+    /** Indicates whether the suspendable function has iterator semantics or normal semantics. */
+    this.isIterable = false;
+    /** Indicates whether top-level concurrency should be limited to a specified ceiling. */
+    this.maxConcurrency = null;
+    if (options) {
+        this.returnValue = options.returnValue;
+        this.acceptsCallback = options.acceptsCallback;
+        this.isIterable = options.isIterable;
+        this.maxConcurrency = options.maxConcurrency;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var fs = Promise.promisifyAll(require(&#x27;fs&#x27;));
+var path = require(&#x27;path&#x27;);
+var Buffer = require(&#x27;buffer&#x27;).Buffer;
+var _ = require(&#x27;lodash&#x27;);
+var asyncx = require(&#x27;asyncx&#x27;);
+var async = asyncx.async;
+var await = asyncx.await;
+asyncx.<span class="apidocCodeKeywordSpan">config</span>(&#x27;Fiber&#x27;, require(&#x27;fibers&#x27;));
+
+
+/**
+* Finds the largest file in the given directory, optionally performing a recursive search.
+* @param {string} dir - the directory to search.
+* @param {object?} options - optional settings: { recurse?: boolean; preview?: boolean }.
+* @returns {object?} null if no files found, otherwise an object of the form
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fibers" id="apidoc.element.asyncawait.fibers">
+        function <span class="apidocSignatureSpan">asyncawait.</span>fibers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Fiber() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.semaphore" id="apidoc.element.asyncawait.semaphore">
+        function <span class="apidocSignatureSpan">asyncawait.</span>semaphore
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Semaphore(n) {
+    this.n = n;
+    this._queued = [];
+    this._avail = n;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.async" id="apidoc.module.asyncawait.async">module asyncawait.async</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.async" id="apidoc.element.asyncawait.async.async">
+        function <span class="apidocSignatureSpan">asyncawait.</span>async
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.cps" id="apidoc.element.asyncawait.async.cps">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>cps
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+# 10. API Reference
+
+### `function async(fn: Function) --&#x3e; (...args) --&#x3e; Promise`
+Creates a function that can be suspended at each asynchronous operation. `fn` contains the body of the suspendable function. `async
+` returns a function of the form `(...args) --&#x3e; Promise`. Any arguments passed to this function are passed through to `fn`.
+The returned promise is resolved when `fn` returns, or rejected if `fn` throws.
+
+### `function async.<span class="apidocCodeKeywordSpan">cps</span>(fn: Function) --&#x3e; (...args, callback) --&#x3e; void`
+Variant of `async` that produces a suspendable function that accepts a node-style callback and returns nothing. See [Obtaining Results
+ from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.thunk(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.result(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.iterable" id="apidoc.element.asyncawait.async.iterable">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>iterable
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function async.thunk(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.result(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.<span class="apidocCodeKeywordSpan">iterable</span>(fn: Function) --&#x3e; (...args) --&#x3e; AsyncIterator`
+Variant of `async` that produces a function which returns an asynchronous iterator, whose `next()` method is a suspendable function
+ that returns a promise. See [Creating and Using Asynchronous Iterators](#creating-and-using-asynchronous-iterators).
+
+### `function async.mod(options) --&#x3e; AsyncFunction`
+Enables the creation of arbitrary variants of the `async` function. Accepts an `options` object and returns an `async` function
+variant. See [The `async.mod` Function](#the-asyncmod-function).
+
+### `function await(expr: Awaitable) --&#x3e; Any`
+Suspends a suspendable function until the [awaitable](#what-works-with-await) expression `expr` produces a result. The result becomes
+ the return value of the `await` call. If `expr` produces an error, then an exception is raised in the suspendable function.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.mod" id="apidoc.element.asyncawait.async.mod">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>mod
+        <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mod = function (options, maxConcurrency) {
+    if (_.isString(options)) {
+        // This way of specifying options is useful for TypeScript users, as they get better type information.
+        // JavaScript users can use this too, but providing an options hash is more useful in that case.
+        var rt, cb, it;
+        switch (options) {
+            case &#x27;returns: promise, callback: false, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: false, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: true, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: none, callback: true, iterable: false&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: false, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: false, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: true, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: none, callback: true, iterable: true&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = true;
+                break;
+        }
+        options = { returnValue: rt, acceptsCallback: cb, isIterable: it, maxConcurrency: maxConcurrency };
+    }
+    var newConfig = new Config(_.defaults({}, options, config));
+    return makeAsyncFunc(newConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    returnValue: &#x3c;string&#x3e;; // Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result
+&#x27;
+    acceptsCallback: &#x3c;boolean&#x3e;;
+    isIterable: &#x3c;boolean&#x3e;;
+    maxConcurrency: &#x3c;number&#x3e;; // Recognised values: falsy values and positive numbers
+}
+```
+Omitted properties will inherit their value from the `async` variant being modded. For example, the calls `async.<span class="apidocCodeKeywordSpan
+">mod</span>({acceptsCallback:true})` and `async.cps.mod({returnValue:&#x27;promise&#x27;})` are equivalent. Both calls return an
+ `async` function that may be used to create suspendable functions that both accept a callback and return a promise.
+
+
+
+# 8. `await` in Depth: Awaitable Expressions
+The subsections below refer to the following code:
+```javascript
+var suspendable = async (function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.result" id="apidoc.element.asyncawait.async.result">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>result
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function async.cps(fn: Function) --&#x3e; (...args, callback) --&#x3e; void`
+Variant of `async` that produces a suspendable function that accepts a node-style callback and returns nothing. See [Obtaining Results
+ from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.thunk(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.<span class="apidocCodeKeywordSpan">result</span>(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.iterable(fn: Function) --&#x3e; (...args) --&#x3e; AsyncIterator`
+Variant of `async` that produces a function which returns an asynchronous iterator, whose `next()` method is a suspendable function
+ that returns a promise. See [Creating and Using Asynchronous Iterators](#creating-and-using-asynchronous-iterators).
+
+### `function async.mod(options) --&#x3e; AsyncFunction`
+Enables the creation of arbitrary variants of the `async` function. Accepts an `options` object and returns an `async` function
+variant. See [The `async.mod` Function](#the-asyncmod-function).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.thunk" id="apidoc.element.asyncawait.async.thunk">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>thunk
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function async(fn: Function) --&#x3e; (...args) --&#x3e; Promise`
+Creates a function that can be suspended at each asynchronous operation. `fn` contains the body of the suspendable function. `async
+` returns a function of the form `(...args) --&#x3e; Promise`. Any arguments passed to this function are passed through to `fn`.
+The returned promise is resolved when `fn` returns, or rejected if `fn` throws.
+
+### `function async.cps(fn: Function) --&#x3e; (...args, callback) --&#x3e; void`
+Variant of `async` that produces a suspendable function that accepts a node-style callback and returns nothing. See [Obtaining Results
+ from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.<span class="apidocCodeKeywordSpan">thunk</span>(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.result(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.iterable(fn: Function) --&#x3e; (...args) --&#x3e; AsyncIterator`
+Variant of `async` that produces a function which returns an asynchronous iterator, whose `next()` method is a suspendable function
+ that returns a promise. See [Creating and Using Asynchronous Iterators](#creating-and-using-asynchronous-iterators).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.async.cps" id="apidoc.module.asyncawait.async.cps">module asyncawait.async.cps</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.cps.cps" id="apidoc.element.asyncawait.async.cps.cps">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>cps
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+# 10. API Reference
+
+### `function async(fn: Function) --&#x3e; (...args) --&#x3e; Promise`
+Creates a function that can be suspended at each asynchronous operation. `fn` contains the body of the suspendable function. `async
+` returns a function of the form `(...args) --&#x3e; Promise`. Any arguments passed to this function are passed through to `fn`.
+The returned promise is resolved when `fn` returns, or rejected if `fn` throws.
+
+### `function async.<span class="apidocCodeKeywordSpan">cps</span>(fn: Function) --&#x3e; (...args, callback) --&#x3e; void`
+Variant of `async` that produces a suspendable function that accepts a node-style callback and returns nothing. See [Obtaining Results
+ from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.thunk(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.result(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.cps.mod" id="apidoc.element.asyncawait.async.cps.mod">
+        function <span class="apidocSignatureSpan">asyncawait.async.cps.</span>mod
+        <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mod = function (options, maxConcurrency) {
+    if (_.isString(options)) {
+        // This way of specifying options is useful for TypeScript users, as they get better type information.
+        // JavaScript users can use this too, but providing an options hash is more useful in that case.
+        var rt, cb, it;
+        switch (options) {
+            case &#x27;returns: promise, callback: false, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: false, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: true, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: none, callback: true, iterable: false&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: false, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: false, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: true, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: none, callback: true, iterable: true&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = true;
+                break;
+        }
+        options = { returnValue: rt, acceptsCallback: cb, isIterable: it, maxConcurrency: maxConcurrency };
+    }
+    var newConfig = new Config(_.defaults({}, options, config));
+    return makeAsyncFunc(newConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    returnValue: &#x3c;string&#x3e;; // Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result
+&#x27;
+    acceptsCallback: &#x3c;boolean&#x3e;;
+    isIterable: &#x3c;boolean&#x3e;;
+    maxConcurrency: &#x3c;number&#x3e;; // Recognised values: falsy values and positive numbers
+}
+```
+Omitted properties will inherit their value from the `async` variant being modded. For example, the calls `async.<span class="apidocCodeKeywordSpan
+">mod</span>({acceptsCallback:true})` and `async.cps.mod({returnValue:&#x27;promise&#x27;})` are equivalent. Both calls return an
+ `async` function that may be used to create suspendable functions that both accept a callback and return a promise.
+
+
+
+# 8. `await` in Depth: Awaitable Expressions
+The subsections below refer to the following code:
+```javascript
+var suspendable = async (function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.async.iterable" id="apidoc.module.asyncawait.async.iterable">module asyncawait.async.iterable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.iterable.iterable" id="apidoc.element.asyncawait.async.iterable.iterable">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>iterable
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function async.thunk(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.result(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.<span class="apidocCodeKeywordSpan">iterable</span>(fn: Function) --&#x3e; (...args) --&#x3e; AsyncIterator`
+Variant of `async` that produces a function which returns an asynchronous iterator, whose `next()` method is a suspendable function
+ that returns a promise. See [Creating and Using Asynchronous Iterators](#creating-and-using-asynchronous-iterators).
+
+### `function async.mod(options) --&#x3e; AsyncFunction`
+Enables the creation of arbitrary variants of the `async` function. Accepts an `options` object and returns an `async` function
+variant. See [The `async.mod` Function](#the-asyncmod-function).
+
+### `function await(expr: Awaitable) --&#x3e; Any`
+Suspends a suspendable function until the [awaitable](#what-works-with-await) expression `expr` produces a result. The result becomes
+ the return value of the `await` call. If `expr` produces an error, then an exception is raised in the suspendable function.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.iterable.mod" id="apidoc.element.asyncawait.async.iterable.mod">
+        function <span class="apidocSignatureSpan">asyncawait.async.iterable.</span>mod
+        <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mod = function (options, maxConcurrency) {
+    if (_.isString(options)) {
+        // This way of specifying options is useful for TypeScript users, as they get better type information.
+        // JavaScript users can use this too, but providing an options hash is more useful in that case.
+        var rt, cb, it;
+        switch (options) {
+            case &#x27;returns: promise, callback: false, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: false, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: true, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: none, callback: true, iterable: false&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: false, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: false, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: true, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: none, callback: true, iterable: true&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = true;
+                break;
+        }
+        options = { returnValue: rt, acceptsCallback: cb, isIterable: it, maxConcurrency: maxConcurrency };
+    }
+    var newConfig = new Config(_.defaults({}, options, config));
+    return makeAsyncFunc(newConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    returnValue: &#x3c;string&#x3e;; // Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result
+&#x27;
+    acceptsCallback: &#x3c;boolean&#x3e;;
+    isIterable: &#x3c;boolean&#x3e;;
+    maxConcurrency: &#x3c;number&#x3e;; // Recognised values: falsy values and positive numbers
+}
+```
+Omitted properties will inherit their value from the `async` variant being modded. For example, the calls `async.<span class="apidocCodeKeywordSpan
+">mod</span>({acceptsCallback:true})` and `async.cps.mod({returnValue:&#x27;promise&#x27;})` are equivalent. Both calls return an
+ `async` function that may be used to create suspendable functions that both accept a callback and return a promise.
+
+
+
+# 8. `await` in Depth: Awaitable Expressions
+The subsections below refer to the following code:
+```javascript
+var suspendable = async (function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.async.result" id="apidoc.module.asyncawait.async.result">module asyncawait.async.result</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.result.result" id="apidoc.element.asyncawait.async.result.result">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>result
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function async.cps(fn: Function) --&#x3e; (...args, callback) --&#x3e; void`
+Variant of `async` that produces a suspendable function that accepts a node-style callback and returns nothing. See [Obtaining Results
+ from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.thunk(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.<span class="apidocCodeKeywordSpan">result</span>(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.iterable(fn: Function) --&#x3e; (...args) --&#x3e; AsyncIterator`
+Variant of `async` that produces a function which returns an asynchronous iterator, whose `next()` method is a suspendable function
+ that returns a promise. See [Creating and Using Asynchronous Iterators](#creating-and-using-asynchronous-iterators).
+
+### `function async.mod(options) --&#x3e; AsyncFunction`
+Enables the creation of arbitrary variants of the `async` function. Accepts an `options` object and returns an `async` function
+variant. See [The `async.mod` Function](#the-asyncmod-function).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.result.mod" id="apidoc.element.asyncawait.async.result.mod">
+        function <span class="apidocSignatureSpan">asyncawait.async.result.</span>mod
+        <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mod = function (options, maxConcurrency) {
+    if (_.isString(options)) {
+        // This way of specifying options is useful for TypeScript users, as they get better type information.
+        // JavaScript users can use this too, but providing an options hash is more useful in that case.
+        var rt, cb, it;
+        switch (options) {
+            case &#x27;returns: promise, callback: false, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: false, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: true, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: none, callback: true, iterable: false&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: false, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: false, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: true, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: none, callback: true, iterable: true&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = true;
+                break;
+        }
+        options = { returnValue: rt, acceptsCallback: cb, isIterable: it, maxConcurrency: maxConcurrency };
+    }
+    var newConfig = new Config(_.defaults({}, options, config));
+    return makeAsyncFunc(newConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    returnValue: &#x3c;string&#x3e;; // Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result
+&#x27;
+    acceptsCallback: &#x3c;boolean&#x3e;;
+    isIterable: &#x3c;boolean&#x3e;;
+    maxConcurrency: &#x3c;number&#x3e;; // Recognised values: falsy values and positive numbers
+}
+```
+Omitted properties will inherit their value from the `async` variant being modded. For example, the calls `async.<span class="apidocCodeKeywordSpan
+">mod</span>({acceptsCallback:true})` and `async.cps.mod({returnValue:&#x27;promise&#x27;})` are equivalent. Both calls return an
+ `async` function that may be used to create suspendable functions that both accept a callback and return a promise.
+
+
+
+# 8. `await` in Depth: Awaitable Expressions
+The subsections below refer to the following code:
+```javascript
+var suspendable = async (function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.async.thunk" id="apidoc.module.asyncawait.async.thunk">module asyncawait.async.thunk</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.thunk.thunk" id="apidoc.element.asyncawait.async.thunk.thunk">
+        function <span class="apidocSignatureSpan">asyncawait.async.</span>thunk
+        <span class="apidocSignatureSpan">(bodyFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+    // Ensure the suspendable function&#x27;s arity matches that of the function it wraps.
+    var arity = bodyFunc.length;
+    if (config.acceptsCallback)
+        ++arity;
+    result = makeFuncWithArity(result, arity);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function async(fn: Function) --&#x3e; (...args) --&#x3e; Promise`
+Creates a function that can be suspended at each asynchronous operation. `fn` contains the body of the suspendable function. `async
+` returns a function of the form `(...args) --&#x3e; Promise`. Any arguments passed to this function are passed through to `fn`.
+The returned promise is resolved when `fn` returns, or rejected if `fn` throws.
+
+### `function async.cps(fn: Function) --&#x3e; (...args, callback) --&#x3e; void`
+Variant of `async` that produces a suspendable function that accepts a node-style callback and returns nothing. See [Obtaining Results
+ from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.<span class="apidocCodeKeywordSpan">thunk</span>(fn: Function) --&#x3e; (...args) --&#x3e; Thunk`
+Variant of `async` that produces a suspendable function that returns a thunk. See [Obtaining Results from Suspendable Functions](#
+obtaining-results-from-suspendable-functions).
+
+### `function async.result(fn: Function) --&#x3e; (...args) --&#x3e; any`
+Variant of `async` that produces a suspendable function that returns its result directly, but can only be called from inside another
+ suspendable function. See [Obtaining Results from Suspendable Functions](#obtaining-results-from-suspendable-functions).
+
+### `function async.iterable(fn: Function) --&#x3e; (...args) --&#x3e; AsyncIterator`
+Variant of `async` that produces a function which returns an asynchronous iterator, whose `next()` method is a suspendable function
+ that returns a promise. See [Creating and Using Asynchronous Iterators](#creating-and-using-asynchronous-iterators).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.async.thunk.mod" id="apidoc.element.asyncawait.async.thunk.mod">
+        function <span class="apidocSignatureSpan">asyncawait.async.thunk.</span>mod
+        <span class="apidocSignatureSpan">(options, maxConcurrency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mod = function (options, maxConcurrency) {
+    if (_.isString(options)) {
+        // This way of specifying options is useful for TypeScript users, as they get better type information.
+        // JavaScript users can use this too, but providing an options hash is more useful in that case.
+        var rt, cb, it;
+        switch (options) {
+            case &#x27;returns: promise, callback: false, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: false, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: false&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: false&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: result, callback: true, iterable: false&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: none, callback: true, iterable: false&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = false;
+                break;
+            case &#x27;returns: promise, callback: false, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: false, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: false, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = false;
+                it = true;
+                break;
+            case &#x27;returns: promise, callback: true, iterable: true&#x27;:
+                rt = &#x27;promise&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: thunk, callback: true, iterable: true&#x27;:
+                rt = &#x27;thunk&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: result, callback: true, iterable: true&#x27;:
+                rt = &#x27;result&#x27;;
+                cb = true;
+                it = true;
+                break;
+            case &#x27;returns: none, callback: true, iterable: true&#x27;:
+                rt = &#x27;none&#x27;;
+                cb = true;
+                it = true;
+                break;
+        }
+        options = { returnValue: rt, acceptsCallback: cb, isIterable: it, maxConcurrency: maxConcurrency };
+    }
+    var newConfig = new Config(_.defaults({}, options, config));
+    return makeAsyncFunc(newConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    returnValue: &#x3c;string&#x3e;; // Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result
+&#x27;
+    acceptsCallback: &#x3c;boolean&#x3e;;
+    isIterable: &#x3c;boolean&#x3e;;
+    maxConcurrency: &#x3c;number&#x3e;; // Recognised values: falsy values and positive numbers
+}
+```
+Omitted properties will inherit their value from the `async` variant being modded. For example, the calls `async.<span class="apidocCodeKeywordSpan
+">mod</span>({acceptsCallback:true})` and `async.cps.mod({returnValue:&#x27;promise&#x27;})` are equivalent. Both calls return an
+ `async` function that may be used to create suspendable functions that both accept a callback and return a promise.
+
+
+
+# 8. `await` in Depth: Awaitable Expressions
+The subsections below refer to the following code:
+```javascript
+var suspendable = async (function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.asyncIterator" id="apidoc.module.asyncawait.asyncIterator">module asyncawait.asyncIterator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.asyncIterator.asyncIterator" id="apidoc.element.asyncawait.asyncIterator.asyncIterator">
+        function <span class="apidocSignatureSpan">asyncawait.</span>asyncIterator
+        <span class="apidocSignatureSpan">(runContext, semaphore, returnValue, acceptsCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AsyncIterator(runContext, semaphore, returnValue, acceptsCallback) {
+    this._runContext = runContext;
+    this._semaphore = semaphore;
+    this._fiber = FiberMgr.create();
+    this._returnValue = returnValue;
+    this._acceptsCallback = acceptsCallback;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.asyncIterator.prototype" id="apidoc.module.asyncawait.asyncIterator.prototype">module asyncawait.asyncIterator.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.asyncIterator.prototype.destroy" id="apidoc.element.asyncawait.asyncIterator.prototype.destroy">
+        function <span class="apidocSignatureSpan">asyncawait.asyncIterator.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+    this._fiber = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var iterator = new AsyncIterator(runContext, semaphore, config.returnValue, config.acceptsCallback);
+        // Wrap the given bodyFunc to properly complete the iteration.
+        runContext.wrapped = function () {
+            var len = arguments.length, args = new Array(len);
+            for (var i = 0; i &#x3c; len; ++i)
+                args[i] = arguments[i];
+            bodyFunc.apply(this, args);
+            iterator.<span class="apidocCodeKeywordSpan">destroy</span>();
+            return { done: true };
+        };
+        // Return the iterator.
+        return iterator;
+    };
+}
+/** Function for creating non-iterable suspendable functions. */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.asyncIterator.prototype.forEach" id="apidoc.element.asyncawait.asyncIterator.prototype.forEach">
+        function <span class="apidocSignatureSpan">asyncawait.asyncIterator.prototype.</span>forEach
+        <span class="apidocSignatureSpan">(callback, doneCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forEach = function (callback, doneCallback) {
+    var _this = this;
+    // Create a function that calls next() in an asynchronous loop until the iteration is complete.
+    var run, runCtx = this._runContext;
+    if (this._returnValue === Config.RESULT)
+        run = function () { return stepAwaited(function () { return _this.next(); }); };
+    else if (this._returnValue === Config.THUNK)
+        run = function () { return _this.next()(stepCallback); };
+    else if (this._acceptsCallback)
+        run = function () { return _this.next(stepCallback); };
+    else
+        run = function () { return _this.next().then(stepResolved, endOfIteration); };
+    // Configure the resolver and callback to be invoked at the end of the iteration.
+    if (this._returnValue === Config.PROMISE || this._returnValue === Config.THUNK) {
+        var doneResolver = defer();
+    }
+    if (!this._acceptsCallback)
+        doneCallback = null;
+    // Execute the entire iteration. For thunks, this is a lazy operation.
+    if (this._returnValue === Config.THUNK) {
+        var thunk = function (done) {
+            if (done)
+                doneResolver.promise.then(function (val) { return done(null, val); }, function (err) { return done(err); });
+            run();
+        };
+    }
+    else {
+        run();
+    }
+    // Return the appropriate value.
+    switch (this._returnValue) {
+        case Config.PROMISE: return doneResolver.promise;
+        case Config.THUNK: return thunk;
+        case Config.RESULT: return undefined;
+        case Config.NONE: return undefined;
+    }
+    // These functions handle stepping through and finalising the iteration.
+    function stepAwaited(next) {
+        try {
+            while (true) {
+                var item = next();
+                if (item.done)
+                    return endOfIteration();
+                callback(item.value);
+            }
+        }
+        catch (err) {
+            endOfIteration(err);
+            throw err;
+        }
+    }
+    function stepCallback(err, result) {
+        if (err || result.done)
+            return endOfIteration(err);
+        callback(result.value);
+        setImmediate(run);
+    }
+    function stepResolved(result) {
+        if (result.done)
+            return endOfIteration();
+        callback(result.value);
+        setImmediate(run);
+    }
+    function endOfIteration(err) {
+        if (doneCallback)
+            err ? doneCallback(err) : doneCallback();
+        if (doneResolver) {
+            if (FiberMgr.isExecutingInFiber()) {
+                runCtx.resolver = doneResolver; // FiberManager will handle it
+            }
+            else {
+                err ? doneResolver.reject(err) : doneResolver.resolve(null);
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Directory is empty.
+callback(null, stats);
+return;
+            } else {
+
+// Get all file stats in parallel.
+paths.<span class="apidocCodeKeywordSpan">forEach</span>(function (path, i) {
+    fs.stat(path, function (err, stat) {
+        if (remaining === 0) return;
+        if (err) {
+            remaining = 0;
+            callback(err);
+        } else {
+            stats[i] = stat;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.asyncIterator.prototype.next" id="apidoc.element.asyncawait.asyncIterator.prototype.next">
+        function <span class="apidocSignatureSpan">asyncawait.asyncIterator.prototype.</span>next
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">next = function (callback) {
+    var _this = this;
+    // Configure the run context.
+    if (this._acceptsCallback) {
+        this._runContext.callback = callback; // May be null, in which case it won&#x27;t be used.
+    }
+    if (this._returnValue !== Config.NONE) {
+        var resolver = defer();
+        this._runContext.resolver = resolver;
+    }
+    // Remove concurrency restrictions for nested calls, to avoid race conditions.
+    if (FiberMgr.isExecutingInFiber())
+        this._semaphore = Semaphore.unlimited;
+    // Run the fiber until it either yields a value or completes. For thunks, this is a lazy operation.
+    if (this._returnValue === Config.THUNK) {
+        var thunk = function (done) {
+            if (done)
+                resolver.promise.then(function (val) { return done(null, val); }, function (err) { return done(err); });
+            _this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+            _this._runContext.done = function () { return _this._semaphore.leave(); };
+        };
+    }
+    else {
+        this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+        this._runContext.done = function () { return _this._semaphore.leave(); };
+    }
+    // Return the appropriate value.
+    switch (this._returnValue) {
+        case Config.PROMISE: return resolver.promise;
+        case Config.THUNK: return thunk;
+        case Config.RESULT: return await(resolver.promise);
+        case Config.NONE: return;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+/** Enumerate the entire iterator, calling callback with each result. */
+AsyncIterator.prototype.forEach = function (callback, doneCallback) {
+    var _this = this;
+    // Create a function that calls next() in an asynchronous loop until the iteration is complete.
+    var run, runCtx = this._runContext;
+    if (this._returnValue === Config.RESULT)
+        run = function () { return stepAwaited(function () { return _this.<span class="apidocCodeKeywordSpan">next</span>(); }); };
+    else if (this._returnValue === Config.THUNK)
+        run = function () { return _this.next()(stepCallback); };
+    else if (this._acceptsCallback)
+        run = function () { return _this.next(stepCallback); };
+    else
+        run = function () { return _this.next().then(stepResolved, endOfIteration); };
+    // Configure the resolver and callback to be invoked at the end of the iteration.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.await" id="apidoc.module.asyncawait.await">module asyncawait.await</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.await.await" id="apidoc.element.asyncawait.await.await">
+        function <span class="apidocSignatureSpan">asyncawait.</span>await
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function await() {
+    // Ensure this function is executing inside a fiber.
+    if (!Fiber.current) {
+        throw new Error(&#x27;await functions, yield functions, and value-returning suspendable &#x27; +
+            &#x27;functions may only be called from inside a suspendable function. &#x27;);
+    }
+    // Parse argument(s). If not a single argument, treat it like an array was passed in.
+    if (arguments.length === 1) {
+        var expr = arguments[0];
+    }
+    else {
+        expr = new Array(arguments.length);
+        for (var i = 0; i &#x3c; arguments.length; ++i)
+            expr[i] = arguments[i];
+        traverse = traverseInPlace;
+    }
+    // Handle each supported &#x27;awaitable&#x27; appropriately...
+    var fiber = Fiber.current;
+    if (expr &#x26;&#x26; _.isFunction(expr.then)) {
+        // A promise: resume the coroutine with the resolved value, or throw the rejection value into it.
+        // NB: ensure the handlers return null to avoid bluebird 3.x warning &#x27;a promise was created in a
+        //     handler but none were returned from it&#x27;. This occurs if the next resumption of the suspendable
+        //     function (i.e. in the client&#x27;s code) creates a bluebird 3.x promise and then awaits it.
+        expr.then(function (val) { return (fiber.run(val), fiber = null); }, function (err) { return (fiber.throwInto(err), fiber
+ = null); });
+    }
+    else if (_.isFunction(expr)) {
+        // A thunk: resume the coroutine with the callback value, or throw the errback value into it.
+        expr(function (err, val) { if (err)
+            fiber.throwInto(err);
+        else
+            fiber.run(val); fiber = null; });
+    }
+    else if (_.isArray(expr) || _.isPlainObject(expr)) {
+        // An array or plain object: resume the coroutine with a deep clone of the array/object,
+        // where all contained promises and thunks have been replaced by their resolved values.
+        // NB: ensure handlers return null (see similar comment above).
+        var trackedPromises = [];
+        expr = traverse(expr, trackAndReplaceWithResolvedValue(trackedPromises));
+        if (!topN) {
+            Promise.all(trackedPromises).then(function (val) { return (fiber.run(expr), fiber = null); }, function (err) { return
+ (fiber.throwInto(err), fiber = null); });
+        }
+        else {
+            Promise.some(trackedPromises, topN).then(function (val) { return (fiber.run(val), fiber = null); }, function (err) {
+return (fiber.throwInto(err), fiber = null); });
+        }
+    }
+    else {
+        // Anything else: resume the coroutine immediately with the value.
+        setImmediate(function () { fiber.run(expr); fiber = null; });
+    }
+    // Suspend the current fiber until the one of the above handlers resumes it again.
+    return Fiber.yield();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.await.in" id="apidoc.element.asyncawait.await.in">
+        function <span class="apidocSignatureSpan">asyncawait.await.</span>in
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function await() {
+    // Ensure this function is executing inside a fiber.
+    if (!Fiber.current) {
+        throw new Error(&#x27;await functions, yield functions, and value-returning suspendable &#x27; +
+            &#x27;functions may only be called from inside a suspendable function. &#x27;);
+    }
+    // Parse argument(s). If not a single argument, treat it like an array was passed in.
+    if (arguments.length === 1) {
+        var expr = arguments[0];
+    }
+    else {
+        expr = new Array(arguments.length);
+        for (var i = 0; i &#x3c; arguments.length; ++i)
+            expr[i] = arguments[i];
+        traverse = traverseInPlace;
+    }
+    // Handle each supported &#x27;awaitable&#x27; appropriately...
+    var fiber = Fiber.current;
+    if (expr &#x26;&#x26; _.isFunction(expr.then)) {
+        // A promise: resume the coroutine with the resolved value, or throw the rejection value into it.
+        // NB: ensure the handlers return null to avoid bluebird 3.x warning &#x27;a promise was created in a
+        //     handler but none were returned from it&#x27;. This occurs if the next resumption of the suspendable
+        //     function (i.e. in the client&#x27;s code) creates a bluebird 3.x promise and then awaits it.
+        expr.then(function (val) { return (fiber.run(val), fiber = null); }, function (err) { return (fiber.throwInto(err), fiber
+ = null); });
+    }
+    else if (_.isFunction(expr)) {
+        // A thunk: resume the coroutine with the callback value, or throw the errback value into it.
+        expr(function (err, val) { if (err)
+            fiber.throwInto(err);
+        else
+            fiber.run(val); fiber = null; });
+    }
+    else if (_.isArray(expr) || _.isPlainObject(expr)) {
+        // An array or plain object: resume the coroutine with a deep clone of the array/object,
+        // where all contained promises and thunks have been replaced by their resolved values.
+        // NB: ensure handlers return null (see similar comment above).
+        var trackedPromises = [];
+        expr = traverse(expr, trackAndReplaceWithResolvedValue(trackedPromises));
+        if (!topN) {
+            Promise.all(trackedPromises).then(function (val) { return (fiber.run(expr), fiber = null); }, function (err) { return
+ (fiber.throwInto(err), fiber = null); });
+        }
+        else {
+            Promise.some(trackedPromises, topN).then(function (val) { return (fiber.run(val), fiber = null); }, function (err) {
+return (fiber.throwInto(err), fiber = null); });
+        }
+    }
+    else {
+        // Anything else: resume the coroutine immediately with the value.
+        setImmediate(function () { fiber.run(expr); fiber = null; });
+    }
+    // Suspend the current fiber until the one of the above handlers resumes it again.
+    return Fiber.yield();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `function await(expr: Awaitable) --&#x3e; Any`
+Suspends a suspendable function until the [awaitable](#what-works-with-await) expression `expr` produces a result. The result becomes
+ the return value of the `await` call. If `expr` produces an error, then an exception is raised in the suspendable function.
+
+### `function await.top(n: number) --&#x3e; (expr: Array|Object) --&#x3e; Array`
+Variant of `await` whose result consists of the `n` fastest-resolving awaitables contained in its argument. See [Variations of `
+await`](#variations-of-await).
+
+### `function await.<span class="apidocCodeKeywordSpan">in</span>(expr: Array|Object) --&#x3e; Array|Object`
+Variant of `await` that returns the original array/object, rather than a cloned array/object, substituting the results of contained
+ awaitables in-place. See [Variations of `await`](#variations-of-await).
+
+
+
+# 11. Acknowledgements
+`asyncawait` uses the following technologies:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.await.top" id="apidoc.element.asyncawait.await.top">
+        function <span class="apidocSignatureSpan">asyncawait.await.</span>top
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">top = function (n) { return getExtraInfo(traverseInPlace, n); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+In contrast, a single `await` call on an array or plain object processes all of the contained awaitables concurrently. For example
+, when the statement `var r5 = await ({ t3: thunk3, t4: thunk4 })` both `thunk3` and `thunk4` are called immediately, and their
+asynchronous tasks are executed concurrently.
+
+Libraries such as [lodash](http://lodash.com) and [underscore](http://underscorejs.org/) interoperate smoothly with `asyncawait`,
+for both producing arrays of concurrently executing tasks, and for consuming arrays of results.
+
+### Variations of `await`
+There are several variations of the `await` function, with alternative behaviour when the awaitable expression is an array or plain
+ object. Take a look at [awaitTop.js](./examples/awaitTop.js) for a usage example.
+
+The `await.<span class="apidocCodeKeywordSpan">top</span>(n)` variant accepts a number `n`, and resumes the suspendable function
+ when the first `n` awaitable expressions contained in the awaitable array or plain object produce their value. The return value
+ of the `await.top(n)` call is an array containing the fastest `n` results in the order they were resolved.
+
+The `await.in` variant is like `await`, but does not clone the awaitable expression it recieves as an argument. The results of the
+ contained awaitables are substituted in place into the original awaitable array or plain object, which becomes the return value
+ of the `await` call.
+
+
+
+# 9. Recipes
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.config" id="apidoc.module.asyncawait.config">module asyncawait.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.config.config" id="apidoc.element.asyncawait.config.config">
+        function <span class="apidocSignatureSpan">asyncawait.</span>config
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Config(options) {
+    /** Recognised values: &#x27;none&#x27;, &#x27;promise&#x27;, &#x27;thunk&#x27;, &#x27;result&#x27;. */
+    this.returnValue = Config.PROMISE;
+    /** Indicates whether a callback function, if supplied, will be used to notify waiters of results. */
+    this.acceptsCallback = false;
+    /** Indicates whether the suspendable function has iterator semantics or normal semantics. */
+    this.isIterable = false;
+    /** Indicates whether top-level concurrency should be limited to a specified ceiling. */
+    this.maxConcurrency = null;
+    if (options) {
+        this.returnValue = options.returnValue;
+        this.acceptsCallback = options.acceptsCallback;
+        this.isIterable = options.isIterable;
+        this.maxConcurrency = options.maxConcurrency;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var fs = Promise.promisifyAll(require(&#x27;fs&#x27;));
+var path = require(&#x27;path&#x27;);
+var Buffer = require(&#x27;buffer&#x27;).Buffer;
+var _ = require(&#x27;lodash&#x27;);
+var asyncx = require(&#x27;asyncx&#x27;);
+var async = asyncx.async;
+var await = asyncx.await;
+asyncx.<span class="apidocCodeKeywordSpan">config</span>(&#x27;Fiber&#x27;, require(&#x27;fibers&#x27;));
+
+
+/**
+* Finds the largest file in the given directory, optionally performing a recursive search.
+* @param {string} dir - the directory to search.
+* @param {object?} options - optional settings: { recurse?: boolean; preview?: boolean }.
+* @returns {object?} null if no files found, otherwise an object of the form
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.config.prototype" id="apidoc.module.asyncawait.config.prototype">module asyncawait.config.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.config.prototype.validate" id="apidoc.element.asyncawait.config.prototype.validate">
+        function <span class="apidocSignatureSpan">asyncawait.config.prototype.</span>validate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function () {
+    var knownRetVal = [Config.PROMISE, Config.THUNK, Config.RESULT, Config.NONE].indexOf(this.returnValue) !== -1;
+    assert(knownRetVal, &#x27;Unrecognised return value: &#x27; + this.returnValue);
+    var hasNotifier = this.returnValue !== Config.NONE || this.acceptsCallback;
+    assert(hasNotifier, &#x27;At least one notification method must be enabled.&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Semaphore = require(&#x27;./semaphore&#x27;);
+var AsyncIterator = require(&#x27;./asyncIterator&#x27;);
+var defer = require(&#x27;./defer&#x27;);
+var await = require(&#x27;../await/index&#x27;);
+/** Function for creating a specific variant of the async function. */
+function makeAsyncFunc(config) {
+// Validate the specified configuration
+config.<span class="apidocCodeKeywordSpan">validate</span>();
+// Create an async function tailored to the given options.
+var result = function async(bodyFunc) {
+    // Create a semaphore for limiting top-level concurrency, if specified in options.
+    var semaphore = config.maxConcurrency ? new Semaphore(config.maxConcurrency) : Semaphore.unlimited;
+    // Choose and run the appropriate function factory based on whether the result should be iterable.
+    var makeFunc = config.isIterable ? makeAsyncIterator : makeAsyncNonIterator;
+    var result = makeFunc(bodyFunc, config, semaphore);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.fiberManager" id="apidoc.module.asyncawait.fiberManager">module asyncawait.fiberManager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fiberManager.create" id="apidoc.element.asyncawait.fiberManager.create">
+        function <span class="apidocSignatureSpan">asyncawait.fiberManager.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create() {
+    return Fiber(runInFiber);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * when the next result is ready.
+ */
+var AsyncIterator = (function () {
+/** Construct a new AsyncIterator instance. This will create a fiber. */
+function AsyncIterator(runContext, semaphore, returnValue, acceptsCallback) {
+    this._runContext = runContext;
+    this._semaphore = semaphore;
+    this._fiber = FiberMgr.<span class="apidocCodeKeywordSpan">create</span>();
+    this._returnValue = returnValue;
+    this._acceptsCallback = acceptsCallback;
+}
+/** Fetch the next result from the iterator. */
+AsyncIterator.prototype.next = function (callback) {
+    var _this = this;
+    // Configure the run context.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fiberManager.isExecutingInFiber" id="apidoc.element.asyncawait.fiberManager.isExecutingInFiber">
+        function <span class="apidocSignatureSpan">asyncawait.fiberManager.</span>isExecutingInFiber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isExecutingInFiber() {
+    return !!Fiber.current;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._runContext.callback = callback; // May be null, in which case it won&#x27;t be used.
+}
+if (this._returnValue !== Config.NONE) {
+    var resolver = defer();
+    this._runContext.resolver = resolver;
+}
+// Remove concurrency restrictions for nested calls, to avoid race conditions.
+if (FiberMgr.<span class="apidocCodeKeywordSpan">isExecutingInFiber</span>())
+    this._semaphore = Semaphore.unlimited;
+// Run the fiber until it either yields a value or completes. For thunks, this is a lazy operation.
+if (this._returnValue === Config.THUNK) {
+    var thunk = function (done) {
+        if (done)
+            resolver.promise.then(function (val) { return done(null, val); }, function (err) { return done(err); });
+        _this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.fibers" id="apidoc.module.asyncawait.fibers">module asyncawait.fibers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fibers.fibers" id="apidoc.element.asyncawait.fibers.fibers">
+        function <span class="apidocSignatureSpan">asyncawait.</span>fibers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Fiber() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fibers.yield" id="apidoc.element.asyncawait.fibers.yield">
+        function <span class="apidocSignatureSpan">asyncawait.fibers.</span>yield
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yield = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            &#x27;functions may only be called from inside a suspendable function. &#x27;);
+    }
+    // Notify waiters of the next result, then suspend the iterator.
+    if (runContext.callback)
+        runContext.callback(null, { value: expr, done: false });
+    if (runContext.resolver)
+        runContext.resolver.resolve({ value: expr, done: false });
+    Fiber.<span class="apidocCodeKeywordSpan">yield</span>();
+};
+// Insert the yield function as the first argument when starting the iterator.
+startupArgs[0] = yield_;
+// Create the iterator.
+var runContext = new RunContext(bodyFunc, this, startupArgs);
+var iterator = new AsyncIterator(runContext, semaphore, config.returnValue, config.acceptsCallback);
+// Wrap the given bodyFunc to properly complete the iteration.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.fibers.prototype" id="apidoc.module.asyncawait.fibers.prototype">module asyncawait.fibers.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fibers.prototype.reset" id="apidoc.element.asyncawait.fibers.prototype.reset">
+        function <span class="apidocSignatureSpan">asyncawait.fibers.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reset() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fibers.prototype.run" id="apidoc.element.asyncawait.fibers.prototype.run">
+        function <span class="apidocSignatureSpan">asyncawait.fibers.prototype.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function run() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (FiberMgr.isExecutingInFiber())
+    this._semaphore = Semaphore.unlimited;
+// Run the fiber until it either yields a value or completes. For thunks, this is a lazy operation.
+if (this._returnValue === Config.THUNK) {
+    var thunk = function (done) {
+        if (done)
+            resolver.promise.then(function (val) { return done(null, val); }, function (err) { return done(err); });
+        _this._semaphore.enter(function () { return _this._fiber.<span class="apidocCodeKeywordSpan">run</span>(_this._runContext
+); });
+        _this._runContext.done = function () { return _this._semaphore.leave(); };
+    };
+}
+else {
+    this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+    this._runContext.done = function () { return _this._semaphore.leave(); };
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.fibers.prototype.throwInto" id="apidoc.element.asyncawait.fibers.prototype.throwInto">
+        function <span class="apidocSignatureSpan">asyncawait.fibers.prototype.</span>throwInto
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function throwInto() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Handle each supported &#x27;awaitable&#x27; appropriately...
+var fiber = Fiber.current;
+if (expr &#x26;&#x26; _.isFunction(expr.then)) {
+    // A promise: resume the coroutine with the resolved value, or throw the rejection value into it.
+    // NB: ensure the handlers return null to avoid bluebird 3.x warning &#x27;a promise was created in a
+    //     handler but none were returned from it&#x27;. This occurs if the next resumption of the suspendable
+    //     function (i.e. in the client&#x27;s code) creates a bluebird 3.x promise and then awaits it.
+    expr.then(function (val) { return (fiber.run(val), fiber = null); }, function (err) { return (fiber.<span class="apidocCodeKeywordSpan
+">throwInto</span>(err), fiber = null); });
+}
+else if (_.isFunction(expr)) {
+    // A thunk: resume the coroutine with the callback value, or throw the errback value into it.
+    expr(function (err, val) { if (err)
+        fiber.throwInto(err);
+    else
+        fiber.run(val); fiber = null; });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.semaphore" id="apidoc.module.asyncawait.semaphore">module asyncawait.semaphore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.semaphore.semaphore" id="apidoc.element.asyncawait.semaphore.semaphore">
+        function <span class="apidocSignatureSpan">asyncawait.</span>semaphore
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Semaphore(n) {
+    this.n = n;
+    this._queued = [];
+    this._avail = n;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.asyncawait.semaphore.prototype" id="apidoc.module.asyncawait.semaphore.prototype">module asyncawait.semaphore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.semaphore.prototype.enter" id="apidoc.element.asyncawait.semaphore.prototype.enter">
+        function <span class="apidocSignatureSpan">asyncawait.semaphore.prototype.</span>enter
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enter = function (fn) {
+    if (this._avail &#x3e; 0) {
+        --this._avail;
+        fn();
+    }
+    else {
+        this._queued.push(fn);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (FiberMgr.isExecutingInFiber())
+    this._semaphore = Semaphore.unlimited;
+// Run the fiber until it either yields a value or completes. For thunks, this is a lazy operation.
+if (this._returnValue === Config.THUNK) {
+    var thunk = function (done) {
+        if (done)
+            resolver.promise.then(function (val) { return done(null, val); }, function (err) { return done(err); });
+        _this._semaphore.<span class="apidocCodeKeywordSpan">enter</span>(function () { return _this._fiber.run(_this._runContext
+); });
+        _this._runContext.done = function () { return _this._semaphore.leave(); };
+    };
+}
+else {
+    this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+    this._runContext.done = function () { return _this._semaphore.leave(); };
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.asyncawait.semaphore.prototype.leave" id="apidoc.element.asyncawait.semaphore.prototype.leave">
+        function <span class="apidocSignatureSpan">asyncawait.semaphore.prototype.</span>leave
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">leave = function () {
+    if (this._queued.length &#x3e; 0) {
+        var fn = this._queued.pop();
+        fn();
+    }
+    else {
+        ++this._avail;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._semaphore = Semaphore.unlimited;
+// Run the fiber until it either yields a value or completes. For thunks, this is a lazy operation.
+if (this._returnValue === Config.THUNK) {
+    var thunk = function (done) {
+        if (done)
+            resolver.promise.then(function (val) { return done(null, val); }, function (err) { return done(err); });
+        _this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+        _this._runContext.done = function () { return _this._semaphore.<span class="apidocCodeKeywordSpan">leave</span>(); };
+    };
+}
+else {
+    this._semaphore.enter(function () { return _this._fiber.run(_this._runContext); });
+    this._runContext.done = function () { return _this._semaphore.leave(); };
+}
+// Return the appropriate value.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
